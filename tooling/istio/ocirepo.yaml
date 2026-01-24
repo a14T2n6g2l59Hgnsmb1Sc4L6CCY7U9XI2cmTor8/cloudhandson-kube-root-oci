@@ -1,0 +1,11 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: istio
+  namespace: flux-system
+spec:
+  interval: 5m
+  provider: aws
+  ref:
+    tag: latest
+  url: oci://${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/eks/config/${CLUSTER_ENV}/${CLUSTER_NAME}/tooling/istio
