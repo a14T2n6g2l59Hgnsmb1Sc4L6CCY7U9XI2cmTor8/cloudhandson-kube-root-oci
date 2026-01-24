@@ -1,0 +1,35 @@
+name: MAIN Pipeline
+
+on:
+  # push:
+  #   branches: [ "workflow_test" ]
+  workflow_dispatch:
+
+jobs:
+  call-reusable-workflow-dev:
+    uses: a14T2n6g2l59Hgnsmb1Sc4L6CCY7U9XI2cmTor8/cloudhandson-eks-reusable-workflow/.github/workflows/reusable-workflow-tooling.yaml@workflow_test
+    with:
+      CLUSTER_ENV: dev
+    secrets:
+      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+
+#  call-reusable-workflow-qa:
+#    uses: a14T2n6g2l59Hgnsmb1Sc4L6CCY7U9XI2cmTor8/cloudhandson-eks-reusable-workflow/.github/workflows/reusable-workflow-tooling.yaml@workflow_test
+#    with:
+#      CLUSTER_ENV: qa
+#    secrets:
+#      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+#
+#  call-reusable-workflow-noprod:
+#    uses: a14T2n6g2l59Hgnsmb1Sc4L6CCY7U9XI2cmTor8/cloudhandson-eks-reusable-workflow/.github/workflows/reusable-workflow-tooling.yaml@workflow_test
+#    with:
+#      CLUSTER_ENV: preprod
+#    secrets:
+#      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
+#
+#  call-reusable-workflow-prod:
+#    uses: a14T2n6g2l59Hgnsmb1Sc4L6CCY7U9XI2cmTor8/cloudhandson-eks-reusable-workflow/.github/workflows/reusable-workflow-tooling.yaml@workflow_test
+#    with:
+#      CLUSTER_ENV: prod
+#    secrets:
+#      AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}

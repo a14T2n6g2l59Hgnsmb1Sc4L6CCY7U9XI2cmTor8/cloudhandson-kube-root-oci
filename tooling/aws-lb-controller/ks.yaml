@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: aws-lb-controller
+  namespace: flux-system
+spec:
+  interval: 5m
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: aws-lb-controller
+    namespace: flux-system
+  dependsOn:
+    - name: cert-manager
