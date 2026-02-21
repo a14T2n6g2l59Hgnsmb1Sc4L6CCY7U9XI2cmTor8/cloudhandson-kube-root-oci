@@ -5,8 +5,8 @@ resources:
 #  - access-entries/ocirepo.yaml
   - appli-oci/ks.yaml
   - appli-oci/ocirepo.yaml
-  - aws-lb-controller/ks.yaml
-  - aws-lb-controller/ocirepo.yaml
+#  - aws-lb-controller/ks.yaml
+#  - aws-lb-controller/ocirepo.yaml
   - cert-manager/ks.yaml
   - cert-manager/ocirepo.yaml
   - external-secrets/ks.yaml
